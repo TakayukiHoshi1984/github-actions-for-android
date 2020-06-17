@@ -22,12 +22,13 @@ jobs:
           sudo rm -rf app/build
           sudo ./gradlew assemble --stacktrace
       - name: Run instrumentation tests
-        uses: malinskiy/action-android/emulator-run-cmd@release/0.0.5
+        uses: reactivecircus/android-emulator-runner@v2
         with:
-          cmd: sudo ./gradlew connectedCheck --stacktrace
-          api: 25
-          tag: default
-          abi: x86
+          api-level: 23
+          target: default
+          arch: x86
+          profile: Nexus 6
+          script: ./gradlew connectedCheck --stacktrace
       # Archiving code coverage results 
       - name: Archive code coverage results
         uses: actions/upload-artifact@v1
