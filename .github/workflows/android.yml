@@ -19,6 +19,7 @@ jobs:
         run: |
           pwd
           chmod +x ./gradlew
+          sudo ./gradlew clean
           sudo ./gradlew assemble --stacktrace
       - name: Run instrumentation tests
         uses: malinskiy/action-android/emulator-run-cmd@release/0.0.5
