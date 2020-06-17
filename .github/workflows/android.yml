@@ -18,7 +18,8 @@ jobs:
       - name: Build project
         run: |
           pwd
-          ./gradlew assembleDebug --stacktrace
+          chmod +x ./gradlew
+          sudo ./gradlew assembleDebug --stacktrace
       - name: Run instrumentation tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
