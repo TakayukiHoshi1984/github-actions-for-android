@@ -28,9 +28,11 @@ jobs:
           target: default
           arch: x86
           profile: Nexus 6
-          run: |
-            sudo ./gradlew connectedCheck --stacktrace
-            ls app/build
+          script: sudo ./gradlew connectedCheck --stacktrace
+      - name: show Directory
+        run: |
+          pwd
+          ls app/build
       # Archiving code coverage results 
       - name: Archive code coverage results
         uses: actions/upload-artifact@v1
