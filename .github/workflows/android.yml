@@ -32,8 +32,7 @@ jobs:
       - name: show Directory
         run: |
           pwd
-          ls
-          
+          ls app
       # Archiving code coverage results 
       - name: Archive code coverage results
         uses: actions/upload-artifact@v1
