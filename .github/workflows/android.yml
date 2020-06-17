@@ -18,6 +18,7 @@ jobs:
       - name: Build project
         run: |
           pwd
+          ls  app/build
           chmod +x ./gradlew
           sudo rm -rf app/build
           sudo ./gradlew assemble --stacktrace
