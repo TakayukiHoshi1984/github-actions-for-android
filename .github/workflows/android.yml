@@ -19,7 +19,7 @@ jobs:
         run: |
           pwd
           chmod +x ./gradlew
-          sudo ./gradlew assembleDebug --stacktrace
+          sudo ./gradlew assemble --stacktrace
       - name: Run instrumentation tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
@@ -27,7 +27,7 @@ jobs:
           target: default
           arch: x86
           profile: Nexus 6
-          script: sudo ./gradlew connectedCheck --stacktrace
+          script: sudo ./gradlew connectedInstrumentTest --stacktrace
       - name: show Directory
         run: |
           pwd
